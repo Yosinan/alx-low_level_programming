@@ -1,31 +1,34 @@
 #include <stdio.h>
+
 /**
- * main - print if the number is postive, zero, or negative
+ * main - loop througnmain - loop through variables a and b, printing digits
  *
- * Description: using the main function
- * this program prints "Programming is positive, zero, or negative
- * Return: 0
+ *Return: print to stdout all possible different combinations of twodigits
  */
 int main(void)
 {
-	int i, j;
+	int  a = '0';
+	int b;
 
-	for (i = '0'; i <= '8'; i++)
+	while (a <= '9')
 	{
-		for (j = i + 1; j <= '9'; j++)
+		b = a + 1;
+		while (b <= '9')
 		{
-			putchar(i);
-			putchar(j);
-			if (i != '8' && j != '9')
+			putchar(a);
+			putchar(b);
+			if (a == '8' && b == '9')
+			{
+				putchar('\n');
+			}
+			else
 			{
 				putchar(',');
 				putchar(' ');
 			}
-			else
-				continue;
+			b++;
 		}
+		a++;
 	}
-	putchar('\n');
-
 	return (0);
 }
