@@ -1,25 +1,38 @@
 #include "main.h"
 /**
- * _isalpha - tests whether a character is from the English alphabet.
- * @c: character to be checked.
- * Return: 1 if the character is an English character.
- * 0 if the character is not an English character.
+ * jack_bauer - Print ebery minute of the day of jack bauer
+ * Description: Start from 00:00 to 23:59
  */
 void jack_bauer(void)
 {
-	
-	int h, m;
+	int x = 0;
+	int a = 0, b = 0, c = 0, d = 0;
 
-	for (h = 0; h < 24; h++)
+	while (x < 1440)
 	{
-		for (m = 0; m < 60; m++)
+		_putchar(a + '0');
+		_putchar(b + '0');
+		_putchar(':');
+		_putchar(c + '0');
+		_putchar(d + '0');
+		_putchar('\n');
+
+		d++;
+		if (d > 9)
 		{
-			_putchar((h / 10) + '0');
-			_putchar((h % 10) + '0');
-			_putchar(':');
-			_putchar((m / 10) + '0');
-			_putchar((m % 10) + '0');
-			_putchar('\n');
+			d = 0;
+			c++;
 		}
+		if (c > 5)
+		{
+			c = 0;
+			b++;
+		}
+		if (b > 9)
+		{
+			b = 0;
+			a++;
+		}
+		x++;
 	}
 }
