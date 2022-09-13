@@ -1,24 +1,34 @@
-#include <stdio.h>
 #include "main.h"
+#include <stdio.h>
 /**
- * times_table - prints the times table from 0 - 9.
- * 
- * Return: Nothing.
+ * print_to_98 - Print all natural numbers from n to 98
+ * @n: int type number
  */
 void print_to_98(int n)
 {
-	if (n < 98)
+	if (n > 98)
 	{
-		for (n = n; n < 98; n++)
-			printf("%d, ", n);
-		printf("%d\n", 98);
+		while (n >= 98)
+		{
+			printf("%d", n);
+			if (n != 98)
+			{
+				printf(", ");
+			}
+			n--;
+		}
 	}
-	else if (n == 98)
-		printf("%d\n", n);
 	else
 	{
-		for (n = n; n > 98; n--)
-			printf("%d, ", n);
-		printf("%d\n", 98);
+		while (n <= 98)
+		{
+			printf("%d", n);
+			if (n != 98)
+			{
+				printf(", ");
+			}
+			n++;
+		}
 	}
+	printf("\n");
 }
