@@ -1,15 +1,23 @@
 #include "main.h"
 /**
- * _isalpha - tests whether a character is from the English alphabet.
- * @c: character to be checked.
- * Return: 1 if the character is an English character.
- * 0 if the character is not an English character.
+ * print_last_digit - print the last digit of a number
+ * @n: int type number
+ * Return: return value of last digit
  */
 int print_last_digit(int n)
 {
-	if (n < 0)
-		n = n * -1;
-	_putchar((n % 10) + '0');
+	int nv;
 
-	return (n % 10);
+	if (n < 0)
+	{
+		nv = -1 * (n % 10);
+		_putchar(nv + '0');
+		return (nv);
+	}
+	else
+	{
+		nv = n % 10;
+		_putchar(nv + '0');
+		return (nv);
+	}
 }
