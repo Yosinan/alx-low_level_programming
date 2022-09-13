@@ -3,7 +3,7 @@
  * print_alphabet - prints lowercase letters from the English alphabet.
  * no parameter
  * Return: void
- * 
+ *
  */
 void print_alphabet(void)
 {
