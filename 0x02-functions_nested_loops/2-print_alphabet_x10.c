@@ -1,20 +1,22 @@
 #include "main.h"
 /**
- * print_alphabet_x10 - prints all lower case letters 10 times
- * @c: character to be checked.
- * Return: void
- * 
+ * print_alphabet_x10 - Print alphabet in lowercase 10 times using nested loop.
+ * Return: 0
  */
 void print_alphabet_x10(void)
 {
-	int i, j;
+	int i = 0;
+	char c;
 
-	for (i = 0; i < 10; i++)
+	while (i < 10)
 	{
-		for (j = 97; j <= 122; j++)
+		c = 'a';
+		while (c <= 'z')
 		{
-			_putchar(j);
+			_putchar(c);
+			c++;
 		}
 		_putchar('\n');
+		i++;
 	}
 }
