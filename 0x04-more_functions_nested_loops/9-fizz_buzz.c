@@ -1,10 +1,11 @@
 #include <stdio.h>
+#include "main.h"
 /**
  * main - prints numbers from 1 to 100
  * description - if its multiple of 3 it prints fizz
  * if its multiple of 5 it prints buzz
  * if its multiple of both then it prints fizzbuzz
- * it has no return type
+ * Return: 0
  */
 int main(void)
 {
