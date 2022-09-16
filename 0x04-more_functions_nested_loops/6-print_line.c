@@ -1,19 +1,19 @@
+#include <stdio.h>
 #include "main.h"
+
 /**
- * print line() - prints line with length of n
- *
- * it has no return type
- */
+* print_line - draws a straight line in the terminal
+* @n: the number of times the character _
+* Return: none;
+**/
+
 void print_line(int n)
 {
-	int i;
-	
-	if (n > 0)
+	int count;
+
+	for (count = 0; count < n; count++)
 	{
-		for (i = 0; i < n; i++)
-			_putchar('_');
-		_putchar('\n');
+		putchar('_');
 	}
-	else
-		_putchar('\n')
+	putchar('\n');
 }
