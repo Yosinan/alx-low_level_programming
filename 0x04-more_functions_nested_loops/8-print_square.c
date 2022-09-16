@@ -1,8 +1,9 @@
 #include "main.h"
+#include <stdio.h>
 /**
- * print_square() - prints square using #
- *
- * it has no return type
+ * print_square - prints square using #
+ * @size: size of square
+ * Return: none
  *
  */
 void print_square(int size)
@@ -14,10 +15,10 @@ void print_square(int size)
 		for (i = 0; i < size; i++)
 		{
 			for (j = 0; j < size; j++)
-				_putchar('#');
-			_putchar('\n');
+				putchar('#');
+			putchar('\n');
 		}
 	}
 	else
-		_putchar('\n');
+		putchar('\n');
 }
