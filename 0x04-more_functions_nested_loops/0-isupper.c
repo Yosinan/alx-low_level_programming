@@ -1,9 +1,9 @@
 #include "main.h"
 /**
- * main - checks if c is uppercase or not
- * Return 1 if c is uppercase
- * Return 0 if c isn't uppercase/is lowercase
- */
+ * _isupper - returns 1 if uppercase alphabet and 0 otherwise
+ * @c; takes in a character
+ * Return: 0 for lowercase, 1 for uppercase
+ **/
 int _isupper(int c)
 {
 	if (c >= 'A' && c <= 'Z')
