@@ -1,24 +1,32 @@
-#include "main.h" 
- /** 
-  * print_triangle() - prints triangle using # 
-  * 
-  * it has no return type 
-  */ 
- void print_triangle(int size) 
- { 
-         if (size > 0) 
-         { 
-                 int i, j, k; 
-  
-                 for (i = 1; i <= size; i++) 
-                 { 
-                         for(j = size; j > i; j--) 
-                                 _putchar(' '); 
-                         for (k = 1; k <= i; k++) 
-                                 _putchar('#'); 
-                         _putchar('\n'); 
-                 } 
-         } 
-         else 
-                 _putchar('\n'); 
- }
+#include <stdio.h>
+#include "main.h"
+
+/**
+ * print_triangle - prints a triangle
+ * @size: size of triangle
+ * Return: none
+ */
+
+void print_triangle(int size)
+{
+	int m, c, s;
+
+	if (size <= 0)
+	{
+		putchar('\n');
+	}
+	for (m = 0; m < size; m++)
+	{
+		for (c = 0; c < size; c++)
+		{
+			s = size - m - 1;
+			if (c < s)
+			{
+				putchar(' ');
+			}
+			else
+				putchar('#');
+		}
+		putchar('\n');
+	}
+}
