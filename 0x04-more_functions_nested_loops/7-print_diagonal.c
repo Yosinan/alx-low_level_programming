@@ -1,23 +1,32 @@
+#include <stdio.h>
 #include "main.h"
-/** 
- * print_diagonal() - print n number of \
- *
- * it has no return type
- */
+
+/**
+* print_diagonal - prints diagonal line on the terminal
+*@n: numbers of lines and columns
+* Return: none
+**/
+
 void print_diagonal(int n)
 {
-	if (n > 0)
-	{
-		int i, j;
+	int p, c;
 
-		for (i = 0; i < n; i++)
+	for (p = 0; p < n; p++)
+	{
+		for (c = 0; c <= p; c++)
 		{
-			for (j = 0; j < i; j++)
-				_putchar(' ');
-			_putchar('\\');
-			_putchar('\n');
+			if (c != p)
+			{
+				putchar(' ');
+			}
+			else
+			{
+				putchar('\\');
+			}
+
 		}
+		putchar('\n');
 	}
-	else
-		_putchar('\n');
+	if (n <= 0)
+		putchar('\n');
 }
