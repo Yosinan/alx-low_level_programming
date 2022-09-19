@@ -6,6 +6,7 @@
  * _atoi - converests a string to an integer
  * @s: string to convert
  * Returns: converted string in numbers
+ * Return: number
  */
 int _atoi(char *s)
 {
