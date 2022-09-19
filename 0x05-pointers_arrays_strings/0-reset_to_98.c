@@ -1,14 +1,11 @@
 #include "main.h"
 #include <stdio.h>
-
 /**
- * main - check the code 
- * reset_to_98 - changes the value the pointer points to or it changes the previous value it points to into 98
-g
+ * reset_to_98 - takes a parameter and updates the value to 98
  * @n: pointer to input integer
  * Return: none
  */
 void reset_to_98(int *n)
 {
-    *n = 98;
+	*n = 98;
 }
