@@ -1,75 +1,54 @@
 #include "main.h"
-
+#include <stdio.h>
 /**
-* _strlen - calculate string length
-* @a: string
-<<<<<<< HEAD
-* Return: lenght of string
-=======
-* Return: lengh
->>>>>>> 66a7e64280d884ae783b6ff5258e667ccd7a2047
-**/
-int _strlen(char *a)
-{
-	int i = 0;
+ * infinite_add - adds two numbers
+ * @n1: number one.
+ * @n2: number two.
+ * @r: buffer that the function will use to store the result.
+ * @size_r: buffer size:
+ * Return: the pointer to dest.
+ */
 
-	while (*a != '\0')
-		i++, a++;
-	return (i);
-}
-
-/**
-* *infinite_add - adds two numbers
-<<<<<<< HEAD
-* @n1: string
-* @n2: string
-* @r: string
-* @size_r: int
-* Return: 0
-=======
-* @n1: number1
-* @n2: number2
-* @r: buffer to store result
-* @size_r: buffer size
-* Return: pointer to the result
->>>>>>> 66a7e64280d884ae783b6ff5258e667ccd7a2047
-**/
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int k, n2_s, n1_s, m;
+	int c1 = 0, c2 = 0, op, bg, dr1, dr2, add = 0;
 
-	r[size_r] = '\0';
-	k = 0;
-	m = 0;
-	n1_s = _strlen(n1);
-	n2_s = _strlen(n2);
-	size_r--;
-	if (n1_s > size_r || n2_s > size_r || size_r == 0 ||
-	    (n1_s == size_r && n2_s == size_r &&
-	     (n1[0] - '0') + (n2[0] - '0') > 9))
-	{
+	while (*(n1 + c1) != '\0')
+		c1++;
+	while (*(n2 + c2) != '\0')
+		c2++;
+	if (c1 >= c2)
+		bg = c1;
+	else
+		bg = c2;
+	if (size_r <= bg + 1)
 		return (0);
-	}
-	n1_s--;
-	n2_s--;
-	while (n1_s >= 0 || n2_s >= 0)
+	r[bg + 1] = '\0';
+	c1--, c2--, size_r--;
+	dr1 = *(n1 + c1) - 48, dr2 = *(n2 + c2) - 48;
+	while (bg >= 0)
 	{
-		if (n1_s < 0)
-			m = n2[n2_s] - '0' + k;
-		else if (n2_s < 0)
-			m = n1[n1_s] - '0' + k;
+		op = dr1 + dr2 + add;
+		if (op >= 10)
+			add = op / 10;
 		else
-			m = (n1[n1_s] - '0') + (n2[n2_s] - '0') + k;
-		r[size_r] = (m % 10) + '0';
-		k = m / 10;
-		n1_s--, n2_s--, size_r--;
+			add = 0;
+		if (op > 0)
+		*(r + bg) = (op % 10) + 48;
+		else
+			*(r + bg) = '0';
+		if (c1 > 0)
+			c1--, dr1 = *(n1 + c1) - 48;
+		else
+			dr1 = 0;
+		if (c2 > 0)
+			c2--, dr2 = *(n2 + c2) - 48;
+		else
+			dr2 = 0;
+		bg--, size_r--;
 	}
-	if (size_r > 0 && (k < 9 && k > 0))
-	{
-		r[size_r] = k + '0';
-		return (r + size_r);
-	}
-	else if (k == 0)
-		return (r + size_r);
-	return (0);
+	if (*(r) == '0')
+		return (r + 1);
+	else
+		return (r);
 }
