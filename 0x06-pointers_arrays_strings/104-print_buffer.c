@@ -2,37 +2,42 @@
 #include <stdio.h>
 
 /**
-* print_buffer - prints a buffer.
-* @b: pointer to string
-* @size: total number of bytes
-* Return: nothing
-**/
-
+ * print_buffer - prints a buffer
+ * @b: buffer.
+ * @size: size of buffer.
+ * Return: no return.
+ */
 void print_buffer(char *b, int size)
 {
-	int c, d;
+	int j, k, l;
 
-	c = 0;
 	if (size <= 0)
-	{
 		printf("\n");
-	}
-
-	while (c < size)
+	else
 	{
-		printf("%8.8x:", c);
-		d = 0;
-		while (d < 10 )
+		for (j = 0; j < size; j += 10)
 		{
-			printf("%02x", b[c + d]);
-			if ((d % 2 == 0 && d != 0) || (c + d > size - 1))
+			printf("%.8x:", j);
+			for (k = j; k < j + 10; k++)
 			{
-				printf(" ");
+				if (k % 2 == 0)
+					printf(" ");
+				if (k < size)
+					printf("%.2x", *(b + k));
+				else
+					printf("  ");
 			}
-			d++;
+			printf(" ");
+			for (l = j; l < j + 10; l++)
+			{
+				if (l >= size)
+					break;
+				if (*(b + l) < 32 || *(b + l) > 126)
+					printf("%c", '.');
+				else
+					printf("%c", *(b + l));
+			}
+			printf("\n");
 		}
-		c += 10;
-		printf("\n");
 	}
-
 }
