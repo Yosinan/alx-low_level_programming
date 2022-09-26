@@ -1,1 +1,1 @@
-More pointers, arrays and strings
+Project on C language 
