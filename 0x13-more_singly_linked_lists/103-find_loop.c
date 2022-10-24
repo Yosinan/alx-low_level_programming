@@ -1,64 +1,42 @@
 #include "lists.h"
-/**
- * find_listint_loop_fl - finds a loop in a linked list
- *
- * @head: linked list to search
- *
- * Return: address of node where loop starts/returns, NULL if no loop
- */
-listint_t *find_listint_loop_fl(listint_t *head)
-{
-	listint_t *ptr, *end;
-
-	if (head == NULL)
-		return (NULL);
-
-	for (end = head->next; end != NULL; end = end->next)
-	{
-		if (end == end->next)
-			return (end);
-		for (ptr = head; ptr != end; ptr = ptr->next)
-			if (ptr == end->next)
-				return (end->next);
-	}
-	return (NULL);
-}
 
 /**
- * free_listint_safe - frees a listint list, even if it has a loop
+ * find_listint_loop - finds the loop in a linked list.
+ * @head: head of a list.
  *
- * @h: head of list
- *
- * Return: number of nodes freed
+ * Return: the address of the node where the loop starts.
  */
-size_t free_listint_safe(listint_t **h)
+listint_t *find_listint_loop(listint_t *head)
 {
-	listint_t *next, *loopnode;
-	size_t len;
-	int loop = 1;
+	listint_t *p2;
+	listint_t *prev;
 
-	if (h == NULL || *h == NULL)
-		return (0);
-
-	loopnode = find_listint_loop_fl(*h);
-	for (len = 0; (*h != loopnode || loop) && *h != NULL; *h = next)
+	p2 = head;
+	prev = head;
+	while (head && p2 && p2->next)
 	{
-		len++;
-		next = (*h)->next;
-		if (*h == loopnode && loop)
+		head = head->next;
+		p2 = p2->next->next;
+
+		if (head == p2)
 		{
-			if (loopnode == loopnode->next)
+			head = prev;
+			prev =  p2;
+			while (1)
 			{
-				free(*h);
-				break;
+				p2 = prev;
+				while (p2->next != head && p2->next != prev)
+				{
+					p2 = p2->next;
+				}
+				if (p2->next == head)
+					break;
+
+				head = head->next;
 			}
-			len++;
-			next = next->next;
-			free((*h)->next);
-			loop = 0;
+			return (p2->next);
 		}
-		free(*h);
 	}
-	*h = NULL;
-	return (len);
+
+	return (NULL);
 }
