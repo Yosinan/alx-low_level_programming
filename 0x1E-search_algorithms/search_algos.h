@@ -49,7 +49,7 @@ skiplist_t *linear_skip(skiplist_t *list, int value);
 
 // struct for singly linked list
 
-**
+/*
  * struct skiplist_s - Singly linked list with an express lane
  *
  * @n: Integer
@@ -58,6 +58,7 @@ skiplist_t *linear_skip(skiplist_t *list, int value);
  * @express: Pointer to the next node in the express lane
  *
  * Description: singly linked list node structure with an express lane
+ *
  */
 typedef struct skiplist_s
 {
