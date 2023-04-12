@@ -1,9 +1,14 @@
 #include "search_algos.h"
 
 /**
- * main - Entry point
+ * binary_search - searches for a value in a sorted array of integers
  *
- * Return: Always EXIT_SUCCESS
+ * @array: pointer to the first element of the array to search in
+ * @size: number of elements in array
+ * @value: value to search for
+ *
+ * Return: If value is not present in array or if array is NULL, -1.
+ * 	otherwise, the index at which the value was found.
  */
 
 int recurr_fun(int *arr, size_t lf, size_t ryt, int val);
@@ -19,10 +24,11 @@ int binary_search(int *array, size_t size, int value)
 
 int recurr_fun(int *arr, size_t lf, size_t ryt, int val)
 {
+	size_t i;
 	while (lf <= ryt) 
 	{
 		printf("Searching in array: ");
-		for (int i = lf; i <= ryt; i++ ) 
+		for (i = lf; i <= ryt; i++) 
 		{
 			printf("%d", array[i]);
 			if (i != end) {
@@ -31,15 +37,15 @@ int recurr_fun(int *arr, size_t lf, size_t ryt, int val)
 				printf("\n");
 		}
 
-		mid = (lf + ryt) / 2;
+		i = (lf + ryt) / 2;
 
-		if (array[mid] == value) 
-			return (mid);
+		if (array[i] == value) 
+			return (i);
 
-		if (array[mid] < value )
-			lf = mid + 1;
+		if (array[i] < value )
+			lf = i + 1;
 		else
-			ryt = mid - 1;
+			ryt = i - 1;
 	}
 		
 	return (-1);
