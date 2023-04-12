@@ -3,14 +3,14 @@
 /**
   * binary_search - searches for a value in a sorted array
   *                 of integers using binary search.
-  * @array: A pointer to the first element of the array to search.
-  * @size: The number of elements in the array.
-  * @value: The value to search for.
+  * @array: a pointer to the first element of the array to search.
+  * @size: the number of elements in the array.
+  * @value: the value to search for.
   *
-  * Return: If the value is not present or the array is NULL, -1.
+  * Return: if the value is not present or the array is NULL, -1.
   *         Otherwise, the index where the value is located.
   *
-  * Description: it prints the sub-array being searched after each change.
+  * 
   */
 
 int recurr_fun(int *arr, size_t lf, size_t ryt, int val);
