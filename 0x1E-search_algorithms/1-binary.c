@@ -25,19 +25,17 @@ int binary_search(int *array, size_t size, int value)
 int recurr_fun(int *arr, size_t lf, size_t ryt, int val)
 {
 	size_t i;
+
 	while (lf <= ryt) 
 	{
 		printf("Searching in array: ");
 		for (i = lf; i < ryt; i++) 
-		
 			printf("%d, ", arr[i]);
 		printf("%d\n", arr[i]);
 
 		i = (lf + ryt) / 2;
-
 		if (arr[i] == val) 
 			return (i);
-
 		if (arr[i] < val)
 			lf = i + 1;
 		else
