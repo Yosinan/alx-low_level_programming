@@ -30,7 +30,7 @@ int recurr_fun(int *arr, size_t lf, size_t ryt, int val)
 		printf("Searching in array: ");
 		for (i = lf; i < ryt; i++) 
 		
-			printf("%d, ", array[i]);
+			printf("%d, ", arr[i]);
 		printf("%d\n", arr[i]);
 
 		i = (lf + ryt) / 2;
