@@ -11,7 +11,7 @@ int jump_search(int *array, size_t size, int value);
 int interpolation_search(int *array, size_t size, int value);
 int exponential_search(int *array, size_t size, int value);
 int advanced_binary(int *array, size_t size, int value);
-listint_t *jump_list(listint_t *list, size_t size, int value);
+/*listint_t *jump_list(listint_t *list, size_t size, int value);*/
 
 
 /**
@@ -22,7 +22,7 @@ listint_t *jump_list(listint_t *list, size_t size, int value);
  * @next: Pointer to the next node
  *
  * Description: singly linked list node structure
- */
+ *
 typedef struct listint_s
 {
     int n;
@@ -36,7 +36,7 @@ skiplist_t *linear_skip(skiplist_t *list, int value);
 
 
 
-/*
+
  * struct skiplist_s - Singly linked list with an express lane
  *
  * @n: Integer
@@ -46,7 +46,7 @@ skiplist_t *linear_skip(skiplist_t *list, int value);
  *
  * Description: singly linked list node structure with an express lane
  *
- */
+ *
 typedef struct skiplist_s
 {
     int n;
@@ -54,6 +54,6 @@ typedef struct skiplist_s
     struct skiplist_s *next;
     struct skiplist_s *express;
 } skiplist_t;
-
+*/
 #endif
 
