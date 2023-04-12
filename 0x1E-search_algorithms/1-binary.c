@@ -42,7 +42,6 @@ int recurr_fun(int *arr, size_t lf, size_t ryt, int val)
 			lf = i + 1;
 		else
 			ryt = i - 1;
-	}
-		
+	}	
 	return (-1);
 }
