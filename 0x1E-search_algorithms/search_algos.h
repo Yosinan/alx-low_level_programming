@@ -5,28 +5,15 @@
 #include <stdlib.h>
 #include <math.h>
 
-//Linear search
 int linear_search(int *array, size_t size, int value);
-
-//Binary Search
 int binary_search(int *array, size_t size, int value);
-
-//Jump Search
 int jump_search(int *array, size_t size, int value);
-
-// Interpolation search
 int interpolation_search(int *array, size_t size, int value);
-
-//Exponential search
 int exponential_search(int *array, size_t size, int value);
-
-//Advanced binary search
 int advanced_binary(int *array, size_t size, int value);
-
-//Jump search in a singly linked list
 listint_t *jump_list(listint_t *list, size_t size, int value);
 
-//struct for signly linked list
+
 /**
  * struct listint_s - singly linked list
  *
@@ -43,11 +30,11 @@ typedef struct listint_s
     struct listint_s *next;
 } listint_t;
 
-//Linear search in a skip list
 
 skiplist_t *linear_skip(skiplist_t *list, int value);
 
-// struct for singly linked list
+
+
 
 /*
  * struct skiplist_s - Singly linked list with an express lane
@@ -69,3 +56,4 @@ typedef struct skiplist_s
 } skiplist_t;
 
 #endif
+
