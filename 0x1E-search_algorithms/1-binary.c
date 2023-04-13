@@ -12,7 +12,8 @@
   *         Otherwise, the index where the value is located.
   * 
   */
-int binary_search(int *array, size_t size, size_t value)
+
+int binary_search(int *array, size_t size, int value)
 {
 	size_t mid;
 	size_t lf = 0;
@@ -27,7 +28,7 @@ int binary_search(int *array, size_t size, size_t value)
 		for (mid = lf; mid < ryt; mid++)
 			printf("%d, ", array[mid]);
 		printf("%d\n", array[mid]);
-		mid = (lf + ryt) / 2;
+		mid = lf + (ryt - lf) / 2;
 		if (array[mid] < value)
 			return (mid);
 		if (array[mid] < value)
