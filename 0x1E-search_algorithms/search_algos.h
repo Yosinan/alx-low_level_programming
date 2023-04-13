@@ -21,7 +21,7 @@ typedef struct listint_s
     struct listint_s *next;
 } listint_t;
 
-/*
+/**
  * struct skiplist_s - Singly linked list with an express lane
  *
  * @n: Integer
