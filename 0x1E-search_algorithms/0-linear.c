@@ -14,8 +14,7 @@
 int linear_search(int *array, size_t size, int value)
 {
 	size_t idx;
-
-        if (array == NULL)
+	if (array == NULL)
 		return (-1);
 	for (idx = 0; idx < size; idx++)
 	{
