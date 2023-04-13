@@ -4,11 +4,12 @@
  * linear_search - searches in array for value using linear search.
  *
  * @array: pointer to the frist element of the array
- * @size: number of the array element
+ * @size: number of the array elements
  * @value: value to search for
  *
- * Return: first index where value is located If value is not present 
- * in array or if array is NULL, your function must return -1
+ * Return: index where value is found ,
+ * If value is not present in array or 
+ * if array is NULL, the function must return -1
  */
 int linear_search(int *array, size_t size, int value)
 {
