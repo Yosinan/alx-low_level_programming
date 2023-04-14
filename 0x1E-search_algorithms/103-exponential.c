@@ -60,7 +60,8 @@ int exponential_search(int *array, size_t size, int value)
 	{
 		printf("Value checked array[%ld] = [%d]\n", ex, array[ex]);
 	}
-	min = (ex < size ? ex : size) - 1;
+	min = ex < size ? ex : size - 1;
+
 	printf("Value found between indexes [%ld] and [%ld]\n", ex / 2, min);
 	return (binary_Search(array, ex / 2, min, value));
 }
