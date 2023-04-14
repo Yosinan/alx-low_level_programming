@@ -21,14 +21,14 @@ int interpolation_search(int *array, size_t size, int value)
 	if (array == NULL)
 		return (-1);
 
-	while (value <= array[top] && bot <= top && value >= array[bot])
+	while (bot <= top)
 	{
-		if (bot == top)
+		/*if (bot == top)
 		{
 			if (array[bot] == value)
 				return (bot);
 			return (-1);
-		}
+		}*/
 		prob = (((double)(top - bot) * (value - array[bot])) /
 				(array[top] - array[bot])) + bot;
 		if (prob < size)
