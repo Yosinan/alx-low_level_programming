@@ -42,11 +42,11 @@ int adv_bin(int *array, size_t lf, size_t ryt, int value)
 			printf("%d, ", array[mid]);
 		printf("%d\n", array[mid]);
 
-		mid = lf + (ryt - lf) / 2;
+		mid = (ryt + lf) / 2;
 		if (array[mid] == value && (mid == lf || array[mid - 1] != value))
 			return (mid);
 		if (array[mid] >= value)
-			return (adv_bin(array, lf, mid - 1, value));
+			return (adv_bin(array, lf, mid, value));
 		else
 			return (adv_bin(array, mid + 1, ryt, value));
 	}
