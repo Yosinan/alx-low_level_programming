@@ -1,7 +1,7 @@
 #include "search_algos.h"
 
 /**
-  * binary_search - Searches for a value in a sorted array
+  * advanced_binary - Searches for a value in a sorted array
   *                 of integers using binary search.
   * @array: A pointer to the first element of the array to search.
   * @size: The number of elements in the array.
@@ -12,7 +12,7 @@
   *
   * Description: Prints the [sub]array being searched after each change.
   */
-int binary_search(int *array, size_t size, int value)
+int advanced_binary(int *array, size_t size, int value)
 {
 	size_t mid;
 	size_t lf = 0;
@@ -28,10 +28,10 @@ int binary_search(int *array, size_t size, int value)
 			printf("%d, ", array[mid]);
 		printf("%d\n", array[mid]);
 
-		mid = (lf + ryt) / 2;
-		if (array[mid] == value)
+		mid = (ryt + lf) / 2;
+		if (array[mid] == value && (mid == lf || array[mid - 1] != value))
 			return (mid);
-		if (array[mid] > value)
+		if (array[mid] >= value)
 			ryt = mid - 1;
 		else
 			lf = mid + 1;
